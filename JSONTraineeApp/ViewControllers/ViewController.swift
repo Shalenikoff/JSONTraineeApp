@@ -73,13 +73,11 @@ extension MainViewController {
             
             do {
                 let person = try JSONDecoder().decode(Person.self, from: data)
-                
-                
+                print(person)
+            } catch let error {
+                print(error)
             }
-            
-            
-            
-        }
+        }.resume()
     }
     
     private func calendar() {
