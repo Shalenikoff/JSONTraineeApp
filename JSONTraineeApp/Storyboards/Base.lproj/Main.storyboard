@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Rick&Morthy's Heroes-->
         <scene sceneID="aiJ-ok-orM">
             <objects>
                 <collectionViewController id="Zfi-12-xZp" customClass="MainViewController" customModule="JSONTraineeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,7 +66,7 @@
                             <outlet property="delegate" destination="Zfi-12-xZp" id="bm5-Q4-yEz"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Main View Controller" id="va0-tP-j5g"/>
+                    <navigationItem key="navigationItem" title="Rick&amp;Morthy's Heroes" id="va0-tP-j5g"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCb-RP-06v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

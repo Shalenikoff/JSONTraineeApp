@@ -8,11 +8,11 @@
 import UIKit
 
 enum UserAction: String, CaseIterable {
-    case rickAndMorty = "Rick & Morty"
-}
-
-enum Link: String {
-    case rickAndMorty = "https://rickandmortyapi.com/api/character/108"
+    case rick = "Rick"
+    case morty = "Morty"
+    case summerSmith = "Summer Smith"
+    case aaa = "aaa"
+    
 }
 
 class MainViewController: UICollectionViewController {
@@ -42,13 +42,15 @@ class MainViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let userAction = userActions[indexPath.item]
         
-        switch userAction {
-        case .rickAndMorty: rickAndMorty()
-        }
+//        switch userAction {
+//        case .rick: getPerson(with: )
+//        case .morty: morty()
+//        case .summerSmith:
+//            <#code#>
+//        case .aaa:
+//            <#code#>
+//        }
     }
-    
-
-
 }
 
 // MARK: UICollectionViewDelegateFromLayout
@@ -62,25 +64,16 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: Networking
 extension MainViewController {
-    private func rickAndMorty() {
-        guard let url = URL(string: Link.rickAndMorty.rawValue) else { return }
-        
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error discription")
-                return
+    private func getPerson() {
+        NetworkManager.shared.getPerson(from: Link.rick.rawValue) { [weak self] result in
+            switch result {
+            case .success(let imageData):
+                self?.
             }
-            
-            do {
-                let person = try JSONDecoder().decode(Person.self, from: data)
-                print(person)
-            } catch let error {
-                print(error)
-            }
-        }.resume()
+        }
     }
     
-    private func calendar() {
+    private func morty() {
         
     }
 }
