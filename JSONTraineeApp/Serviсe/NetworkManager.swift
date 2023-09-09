@@ -8,9 +8,9 @@
 import Foundation
 
 enum Link: String {
-    case rick = "https://rickandmortyapi.com/api/character/1"
-    case morty = "https://rickandmortyapi.com/api/character/2"
-    case summerSmith = "https://rickandmortyapi.com/api/character/3"
+    case character = "https://rickandmortyapi.com/api/character"
+    case location = "https://rickandmortyapi.com/api/location"
+    case episode = "https://rickandmortyapi.com/api/episode"
 }
 
 enum NerworkError: Error {

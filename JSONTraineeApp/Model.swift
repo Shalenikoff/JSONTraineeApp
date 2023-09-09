@@ -12,3 +12,11 @@ struct Person: Decodable {
     let gender: String?
     let id: Int?
 }
+
+struct Location: Decodable {
+    
+}
+
+struct Episode: Decodable {
+    
+}
