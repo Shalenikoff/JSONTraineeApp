@@ -8,14 +8,12 @@
 import UIKit
 
 enum UserAction: String, CaseIterable {
-    case rick = "Rick"
-    case morty = "Morty"
-    case summerSmith = "Summer Smith"
-    case aaa = "aaa"
-    
+    case characters = "Characters"
+    case episodes = "Episodes"
+    case locations = "Locations"
 }
 
-class MainViewController: UICollectionViewController {
+class NavigationViewController: UICollectionViewController {
 
     let userActions = UserAction.allCases
     
@@ -33,28 +31,32 @@ class MainViewController: UICollectionViewController {
         }
         
         cell.userActionCell.text = userActions[indexPath.item].rawValue
-        
+
         return cell
     }
     
-    // MARK: UICollectionViewCellDelegate
+    override func viewDidLoad() {
+        <#code#>
+    }
     
+    
+    // MARK: UICollectionViewCellDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let userAction = userActions[indexPath.item]
         
-//        switch userAction {
-//        case .rick: getPerson(with: )
-//        case .morty: morty()
-//        case .summerSmith:
-//            <#code#>
-//        case .aaa:
-//            <#code#>
-//        }
+        switch userAction {
+        case .characters:
+            performSegue(withIdentifier: "showCharactecrs", sender: nil)
+        case .episodes:
+            performSegue(withIdentifier: "showLocations", sender: nil)
+        case .locations:
+            performSegue(withIdentifier: "showCharactecrs", sender: nil)
+        }
     }
 }
 
 // MARK: UICollectionViewDelegateFromLayout
-extension MainViewController: UICollectionViewDelegateFlowLayout {
+extension NavigationViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -63,18 +65,18 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: Networking
-extension MainViewController {
-    private func getPerson() {
-        NetworkManager.shared.getPerson(from: Link.rick.rawValue) { [weak self] result in
-            switch result {
-            case .success(let imageData):
-                self?.
-            }
-        }
-    }
-    
-    private func morty() {
-        
-    }
-}
+//extension NavigationViewController {
+//    private func getPerson() {
+//        NetworkManager.shared.getPerson(from: Link.rick.rawValue) { [weak self] result in
+//            switch result {
+//            case .success(let imageData):
+//                self?.succesAlert
+//            }
+//        }
+//    }
+//
+//    private func morty() {
+//
+//    }
+//}
 

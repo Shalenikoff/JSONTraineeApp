@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Rick&Morthy's Heroes-->
+        <!--Rick&Morthy's Space-->
         <scene sceneID="aiJ-ok-orM">
             <objects>
-                <collectionViewController id="Zfi-12-xZp" customClass="MainViewController" customModule="JSONTraineeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="Zfi-12-xZp" customClass="NavigationViewController" customModule="JSONTraineeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jHJ-dh-JbY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,6 +58,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="userActionCell" destination="raQ-8q-Vxq" id="4k8-2k-dCJ"/>
+                                    <segue destination="HI9-sX-H8C" kind="show" identifier="showCaracters" id="Cde-U5-gOo"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -66,11 +67,53 @@
                             <outlet property="delegate" destination="Zfi-12-xZp" id="bm5-Q4-yEz"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Rick&amp;Morthy's Heroes" id="va0-tP-j5g"/>
+                    <navigationItem key="navigationItem" title="Rick&amp;Morthy's Space" id="va0-tP-j5g"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCb-RP-06v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2333.5877862595421" y="-1042.2535211267607"/>
+            <point key="canvasLocation" x="2427" y="-1042"/>
+        </scene>
+        <!--Characters Table View Controller-->
+        <scene sceneID="dK2-CM-8ee">
+            <objects>
+                <tableViewController id="HI9-sX-H8C" customClass="CharactersTableViewController" customModule="JSONTraineeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fAT-Ai-rIk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="118" id="Gj0-lm-fiC">
+                                <rect key="frame" x="0.0" y="50" width="393" height="118"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gj0-lm-fiC" id="kw7-xB-iHX">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="118"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZv-1W-9TA">
+                                            <rect key="frame" x="15" y="5" width="108" height="108"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="108" id="wRH-ea-O4p"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="iZv-1W-9TA" firstAttribute="leading" secondItem="kw7-xB-iHX" secondAttribute="leading" constant="15" id="JBV-n4-nG4"/>
+                                        <constraint firstItem="iZv-1W-9TA" firstAttribute="top" secondItem="kw7-xB-iHX" secondAttribute="top" constant="5" id="Zyh-VH-gYW"/>
+                                        <constraint firstAttribute="bottom" secondItem="iZv-1W-9TA" secondAttribute="bottom" constant="5" id="oBF-Lr-FaY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HI9-sX-H8C" id="HfK-B1-J6g"/>
+                            <outlet property="delegate" destination="HI9-sX-H8C" id="JcZ-3W-hgw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="wR7-Pe-bhs"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IwJ-4p-efP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3394.6564885496182" y="-1320.4225352112676"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zvu-5r-nyw">
@@ -92,6 +135,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
