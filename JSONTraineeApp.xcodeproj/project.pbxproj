@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B4FAA0C2AB2425600A4D6BA /* LocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FAA0B2AB2425600A4D6BA /* LocationsTableViewController.swift */; };
 		2BBB566C2AA2A3E600985502 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB566B2AA2A3E600985502 /* AppDelegate.swift */; };
 		2BBB566E2AA2A3E600985502 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB566D2AA2A3E600985502 /* SceneDelegate.swift */; };
 		2BBB56702AA2A3E600985502 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB566F2AA2A3E600985502 /* NavigationViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B4FAA0B2AB2425600A4D6BA /* LocationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewController.swift; sourceTree = "<group>"; };
 		2BBB56682AA2A3E600985502 /* JSONTraineeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONTraineeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBB566B2AA2A3E600985502 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BBB566D2AA2A3E600985502 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		2BBB56812AA2A45900985502 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2B4FAA0B2AB2425600A4D6BA /* LocationsTableViewController.swift */,
 				2BC1CFA72AAD3ACA0076DABF /* CharactersViewController.swift */,
 				2BBB566F2AA2A3E600985502 /* NavigationViewController.swift */,
 			);
@@ -201,6 +204,7 @@
 				2BC1CFA52AAD0ACB0076DABF /* NetworkManager.swift in Sources */,
 				2BC1CFA82AAD3ACA0076DABF /* CharactersViewController.swift in Sources */,
 				2BBB56852AA3AD3800985502 /* Model.swift in Sources */,
+				2B4FAA0C2AB2425600A4D6BA /* LocationsTableViewController.swift in Sources */,
 				2BBB56832AA39BB100985502 /* UserActionCell.swift in Sources */,
 				2BBB56702AA2A3E600985502 /* NavigationViewController.swift in Sources */,
 				2BBB566C2AA2A3E600985502 /* AppDelegate.swift in Sources */,

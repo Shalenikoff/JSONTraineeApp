@@ -9,7 +9,7 @@ import UIKit
 
 enum UserAction: String, CaseIterable {
     case characters = "Characters"
-    case episodes = "Episodes"
+//    case episodes = "Episodes"
     case locations = "Locations"
 }
 
@@ -31,12 +31,11 @@ class NavigationViewController: UICollectionViewController {
         }
         
         cell.userActionCell.text = userActions[indexPath.item].rawValue
-
         return cell
     }
     
     override func viewDidLoad() {
-        <#code#>
+        
     }
     
     
@@ -46,11 +45,23 @@ class NavigationViewController: UICollectionViewController {
         
         switch userAction {
         case .characters:
-            performSegue(withIdentifier: "showCharactecrs", sender: nil)
-        case .episodes:
-            performSegue(withIdentifier: "showLocations", sender: nil)
+            performSegue(withIdentifier: "showCharacters", sender: nil)
+//        case .episodes:
+//            performSegue(withIdentifier: "showCharactecrs", sender: nil)
         case .locations:
-            performSegue(withIdentifier: "showCharactecrs", sender: nil)
+            performSegue(withIdentifier: "showLocations", sender: nil)
+        }
+    }
+    
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCharacters" {
+            guard let charactersVC = segue.destination as? CharactersTableViewController else { return }
+        } else if segue.identifier == "showLocations" {
+            guard let locationsVC = segue.destination as? LocationsTableViewController else { return }
+        } else {
+            return
         }
     }
 }
@@ -62,7 +73,13 @@ extension NavigationViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
             CGSize(width: UIScreen.main.bounds.width - 50, height: 100)
     }
+    
+    
+    // MARK: Navigation
+    
+    
 }
+
 
 // MARK: Networking
 //extension NavigationViewController {
